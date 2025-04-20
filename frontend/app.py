@@ -2875,11 +2875,11 @@ def create_app():
             
 
 
-        test_vllms_radio.change(
-            toggle_test_vllms,
-            test_vllms_radio,
-            test_vllm_radio_out
-        )
+        # test_vllms_radio.change(
+        #     toggle_test_vllms,
+        #     test_vllms_radio,
+        #     test_vllm_radio_out
+        # )
 
         # vllms=gr.Radio(["vLLM1", "vLLM2", "Create New"], value="vLLM1", show_label=False, info="Select a vLLM or create a new one. Where?")
         # vllms.change(
