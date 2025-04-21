@@ -2278,8 +2278,9 @@ def create_app():
             with gr.Row():
                 for current_vllm in vllm_list:
                     with gr.Row():
-                        
-                        vllm_selected = gr.Radio([f'{current_vllm["container_name"]}'], value=radio_state_val, interactive=True, label=f'{current_vllm["uid"]} {current_vllm["ts"]} {current_vllm["gpu"]["mem"]}',info=f'{current_vllm["State"]["Status"]} {current_vllm["ts"]}')
+                        print(f'current_vllm')
+                        print(current_vllm)
+                        vllm_selected = gr.Radio([f'{current_vllm["container_name"]}'], value=radio_state_val, interactive=True, label=f'{current_vllm["uid"]} {current_vllm["ts"]}',info=f'{current_vllm["State"]["Status"]} {current_vllm["ts"]}')
 
                                         
                         # container_name = gr.Textbox(value=current_vllm["container_name"], interactive=False, elem_classes="table-cell", label="Container Name", info="Container Name")  
