@@ -2265,21 +2265,21 @@ def create_app():
             outputs=[container_state]
         ) 
 
- 
-        my_state = gr.State("")
+        # bbbbb
+        radio_state = gr.State("")
           
-        @gr.render(inputs=[vllm_state,my_state])
-        def render_vllm(vllm_list,my_state_val):
+        @gr.render(inputs=[vllm_state,radio_state])
+        def render_vllm(vllm_list,radio_state_val):
             
 
             
-            print(f'my_state_val: {my_state_val}')
+            print(f'radio_state_val: {radio_state_val}')
 
             with gr.Row():
                 for current_vllm in vllm_list:
                     with gr.Row():
                         
-                        vllm_selected = gr.Radio([f'{current_vllm["container_name"]}'], value=my_state_val, interactive=True, label=f'{current_vllm["uid"]} {current_vllm["ts"]}',info=f'{current_vllm["State"]["Status"]} {current_vllm["ts"]}')
+                        vllm_selected = gr.Radio([f'{current_vllm["container_name"]}'], value=radio_state_val, interactive=True, label=f'{current_vllm["uid"]} {current_vllm["ts"]} {current_vllm["gpu"]["mem"]}',info=f'{current_vllm["State"]["Status"]} {current_vllm["ts"]}')
 
                                         
                         # container_name = gr.Textbox(value=current_vllm["container_name"], interactive=False, elem_classes="table-cell", label="Container Name", info="Container Name")  
@@ -2292,7 +2292,7 @@ def create_app():
                         vllm_selected.change(
                             selected_vllm_info,
                             [vllm_selected],
-                            [selected_vllm_uuid, my_state]
+                            [selected_vllm_uuid, radio_state]
                         )
                         
         
