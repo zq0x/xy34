@@ -1458,27 +1458,6 @@ default_vllm = {
 
 
 
-# print(f'__________________________________ save ___________________________________')
-# redis_connection(**test_call_save)
-# redis_connection(**test_call_save2)
-# print(f'________________________________________________________________________')
-# print(f'')
-            
-        
-print(f'__________________________________ get __________________________________')
-test_vllms = redis_connection(**test_call_get)
-test_vllms_list_running = [c for c in test_vllms if c["State"]["Status"] == "running"]
-print(f'________________________________________________________________________')
-# print(f'1')
-# print(f'{test_vllms}')
-# print(f'2')
-# print(f'{test_vllms_list_running}')
-# print(f'3')
-# test_vllm = [{'id': '2', 'State': {'Status': 'running'}, 'ts': '2025-04-07 00:47:00'}, {'id': '2', 'State': {'Status': 'running'}, 'ts': '2025-04-07 00:47:00'}, {'id': '2', 'State': {'Status': 'running'}, 'ts': '2025-04-07 00:47:00'}, {'id': '3', 'State': {'Status': 'running'}, 'ts': '2025-04-07 00:47:00'}]
-# print(f'4')
-# print(type(test_vllms))  # Should be `<class 'list'>`
-# print(f'5')
-
 print(f'__________________________________ delete ___________________________________')
 redis_connection(**test_call_delete_all)
 print(f'________________________________________________________________________')
@@ -1496,13 +1475,6 @@ time.sleep(0.05)
 
 
 
-# print(f'__________________________________ get __________________________________')
-# res_redis = redis_connection(**test_call_get)
-# print(f'________________________________________________________________________')
-# print(f'{res_redis}')
-# print(f'')
-# time.sleep(0.05)
-
 
 
 print(f'_________________________________ update ___________________________________')
@@ -1511,11 +1483,13 @@ print(f'________________________________________________________________________
 print(f'')
 time.sleep(0.05)
 
-# print(f'__________________________________ get __________________________________')
-# res_redis = redis_connection(**test_call_get)
-# print(f'{res_redis}')
-# print(f'________________________________________________________________________')
-# print(f'\n\n')
+
+
+        
+print(f'__________________________________ get __________________________________')
+test_vllms = redis_connection(**test_call_get)
+test_vllms_list_running = [c for c in test_vllms if c["State"]["Status"] == "running"]
+print(f'________________________________________________________________________')
 
 
 
