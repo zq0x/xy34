@@ -1185,12 +1185,15 @@ def redis_connection(**kwargs):
             save_data = kwargs["data"]
             
             
-            
+            # bbbbb
             data_obj = {
                 "container_name": save_data.get("container_name", "err_container_name"),
                 "uid": save_data.get("uid", "00000000000"),
                 "State": {
                     "Status": "running"
+                },
+                "gpu": {
+                    "mem": save_data.get("gpu", {}).get("mem", "err%")
                 },
                 "ts": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             }        
