@@ -1465,10 +1465,10 @@ default_vllm = {
 # print(f'')
             
         
-print(f'__________________________________ get __________________________________')
-test_vllms = redis_connection(**test_call_get)
-test_vllms_list_running = [c for c in test_vllms if c["State"]["Status"] == "running"]
-print(f'________________________________________________________________________')
+# print(f'__________________________________ get __________________________________')
+# test_vllms = redis_connection(**test_call_get)
+# test_vllms_list_running = [c for c in test_vllms if c["State"]["Status"] == "running"]
+# print(f'________________________________________________________________________')
 # print(f'1')
 # print(f'{test_vllms}')
 # print(f'2')
