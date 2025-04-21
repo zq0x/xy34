@@ -1193,7 +1193,7 @@ def redis_connection(**kwargs):
                     "Status": "running"
                 },
                 "gpu": {
-                    "mem": save_data.get("gpu", {}).get("mem", "err%")
+                    "mem": save_data.get("gpu", {}).get("mem", "err_gpu_mem")
                 },
                 "ts": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             }        
@@ -2283,7 +2283,7 @@ def create_app():
                     with gr.Row():
                         print(f'current_vllm')
                         print(current_vllm)
-                        vllm_selected = gr.Radio([f'{current_vllm["container_name"]}'], value=radio_state_val, interactive=True, label=f'{current_vllm["uid"]} {current_vllm["ts"]}',info=f'{current_vllm["State"]["Status"]} {current_vllm["ts"]}')
+                        vllm_selected = gr.Radio([f'{current_vllm["container_name"]}'], value=radio_state_val, interactive=True, label=f'{current_vllm["uid"]} {current_vllm["ts"]} {current_vllm["gpu"]["mem"]}',info=f'{current_vllm["State"]["Status"]} {current_vllm["ts"]}')
 
                                         
                         # container_name = gr.Textbox(value=current_vllm["container_name"], interactive=False, elem_classes="table-cell", label="Container Name", info="Container Name")  
