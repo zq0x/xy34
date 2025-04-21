@@ -1465,10 +1465,10 @@ default_vllm = {
 # print(f'')
             
         
-# print(f'__________________________________ get __________________________________')
-# test_vllms = redis_connection(**test_call_get)
-# test_vllms_list_running = [c for c in test_vllms if c["State"]["Status"] == "running"]
-# print(f'________________________________________________________________________')
+print(f'__________________________________ get __________________________________')
+test_vllms = redis_connection(**test_call_get)
+test_vllms_list_running = [c for c in test_vllms if c["State"]["Status"] == "running"]
+print(f'________________________________________________________________________')
 # print(f'1')
 # print(f'{test_vllms}')
 # print(f'2')
@@ -1496,12 +1496,12 @@ time.sleep(0.05)
 
 
 
-print(f'__________________________________ get __________________________________')
-res_redis = redis_connection(**test_call_get)
-print(f'________________________________________________________________________')
-print(f'{res_redis}')
-print(f'')
-time.sleep(0.05)
+# print(f'__________________________________ get __________________________________')
+# res_redis = redis_connection(**test_call_get)
+# print(f'________________________________________________________________________')
+# print(f'{res_redis}')
+# print(f'')
+# time.sleep(0.05)
 
 
 
@@ -1511,11 +1511,11 @@ print(f'________________________________________________________________________
 print(f'')
 time.sleep(0.05)
 
-print(f'__________________________________ get __________________________________')
-res_redis = redis_connection(**test_call_get)
-print(f'{res_redis}')
-print(f'________________________________________________________________________')
-print(f'\n\n')
+# print(f'__________________________________ get __________________________________')
+# res_redis = redis_connection(**test_call_get)
+# print(f'{res_redis}')
+# print(f'________________________________________________________________________')
+# print(f'\n\n')
 
 
 
